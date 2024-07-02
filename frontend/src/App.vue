@@ -1,17 +1,7 @@
 <!-- CadastroLivro.vue -->
 <template>
-  <v-app dark>
-  <v-app-bar app dark>
-    <v-toolbar-title>Cadastro de Livros</v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-btn text @click="irParaInicio">Início</v-btn>
-    <v-btn text @click="irParaCadastroLivro">Cadastrar Livro</v-btn>
-    <v-btn icon @click="voltar">
-      <v-icon>mdi-arrow-left</v-icon>
-    </v-btn>
-  </v-app-bar>
-
-    <v-main dark>
+  <v-app>
+    <v-main>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-container>
           <v-row>
@@ -65,7 +55,7 @@
             <v-col cols="12">
               <v-btn
                 :disabled="!valid"
-                color="yellow darken-1"
+                color="green darken-1"
                 class="mr-4"
                 @click="salvarLivro"
               >
@@ -76,7 +66,7 @@
                 Limpar
               </v-btn>
 
-              <v-btn color="orange darken-1" @click="voltar">
+              <v-btn color="red darken-1" @click="voltar">
                 Voltar
               </v-btn>
             </v-col>
@@ -128,65 +118,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.v-application {
-  background-color: #000000;
-  color: #fff;
-}
-
-.v-toolbar {
-  background-color: #000;
-}
-
-.v-list {
-  background-color: #333;
-}
-
-.v-list-item {
-  color: #fff;
-}
-
-.v-list-item:hover {
-  background-color: #000000;
-}
-
-.v-form {
-  padding: 20px;
-}
-
-.v-btn {
-  margin: 10px;
-}
-
-.v-btn.yellow.darken-2 {
-  background-color: #F7DC6F !important;
-  color: #000 !important;
-}
-
-.v-btn.black {
-  background-color: #000 !important;
-  color: #fff !important;
-}
-
-.v-text-field {
-  margin: 10px;
-}
-
-.v-text-field label {
-  color: #d4b727;
-}
-
-.v-text-field input {
-  color: #dbd415;
-}
-
-.v-text-field .v-input__slot {
-  background-color: #333;
-  border-color: #444;
-}
-
-.v-text-field .v-input__slot:focus {
-  border-color: #b49827;
-}
-</style>
